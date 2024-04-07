@@ -60,8 +60,8 @@ function App() {
         await animate("#button", {
           color: "#4c0519",
           border: "1px solid #4c0519",
-          backgroundColor: "#f06292",
-        })
+          backgroundColor: "rgb(255 241 242)",
+        });
       })();
     }
   }, [isInView, cursorLoaded]);
@@ -83,6 +83,7 @@ function App() {
         className="w-20 h-20 absolute"
         id="cursor"
         onLoad={() => setCursorLoaded(true)}
+        style={{ display: cursorLoaded ? "block" : "none" }}
       />
     </main>
   );
