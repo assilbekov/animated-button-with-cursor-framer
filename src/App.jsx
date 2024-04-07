@@ -20,6 +20,19 @@ function App() {
             duration: 1,
           }
         );
+
+        await animate(
+          "#cursor",
+          {
+            scale: 0.9,
+          },
+          {
+            delay: 0.05,
+            duration: 0.3,
+            repeat: 1,
+            repeatType: "reverse",
+          }
+        );
       })();
     }
   }, [isInView, cursorLoaded]);
