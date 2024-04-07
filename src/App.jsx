@@ -43,6 +43,26 @@ function App() {
           { duration: 1 }
         );
       })();
+
+      (async () => {
+        await animate("#button", {
+          boxShadow: "5px 5px 0 rgba(76, 5, 25, 0.9)",
+        });
+
+        await animate(
+          "#button",
+          {
+            boxShadow: "2px 2px 0 rgba(76, 5, 25, 0.9)",
+          },
+          { delay: 0.5, repeat: 1, repeatType: "reverse" }
+        );
+
+        await animate("#button", {
+          color: "#4c0519",
+          border: "1px solid #4c0519",
+          backgroundColor: "#f06292",
+        })
+      })();
     }
   }, [isInView, cursorLoaded]);
 
@@ -51,7 +71,10 @@ function App() {
       className="w-full h-screen bg-slate-50 flex justify-center items-center relative"
       ref={scopeRef}
     >
-      <button className="py-4 px-32 bg-rose-700 border-1 border-rose-950 rounded-md text-slate-50 text-2xl">
+      <button
+        id="button"
+        className="py-4 px-32 bg-rose-700 border-1 border-rose-950 rounded-md text-slate-50 text-2xl"
+      >
         Click me!
       </button>
       <img
