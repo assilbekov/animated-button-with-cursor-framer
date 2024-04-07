@@ -33,6 +33,15 @@ function App() {
             repeatType: "reverse",
           }
         );
+
+        await animate(
+          "#cursor",
+          {
+            x: [10, 50],
+            y: [30, 80],
+          },
+          { duration: 1 }
+        );
       })();
     }
   }, [isInView, cursorLoaded]);
